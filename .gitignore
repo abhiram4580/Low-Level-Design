@@ -1,0 +1,8 @@
+# Compiled Binaries
+*.exe
+*.o
+*.obj
+
+# Temporary Files
+tempCodeRunnerFile.cpp
+.vscode/
