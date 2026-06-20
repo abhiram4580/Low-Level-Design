@@ -27,7 +27,7 @@ class UPI:public Payment{
 class NetBanking : public Payment{
     public:
     void makePayment(double amount)override{
-        cout<<"Payment of "<<amount<<" has been made through [UPI]"<<endl;
+        cout<<"Payment of "<<amount<<" has been made through [NetBanking]"<<endl;
     }
 };
 
@@ -46,7 +46,7 @@ class PaymentService{
         this->payment=payment;
     }
 
-    void PayAmount(double amount){
+    void payAmount(double amount){
         payment->makePayment(amount);
     }
 
@@ -57,19 +57,19 @@ class PaymentService{
 int main(){
     CreditCard c1;
     PaymentService p1(&c1);
-    p1.PayAmount(10000);
+    p1.payAmount(10000);
 
     UPI u1;
     PaymentService p2(&u1);
-    p2.PayAmount(100000);
+    p2.payAmount(100000);
 
     NetBanking n1;
     PaymentService p3(&n1);
-    p3.PayAmount(100000);
+    p3.payAmount(100000);
 
     WalletPayment w1;
     PaymentService p4(&w1);
-    p4.PayAmount(1000000);
+    p4.payAmount(1000000);
 
     return 0;
 }
